@@ -41,11 +41,12 @@ for(v in 1: n.w ) {
 }
 
 dp.total=NULL
-for(v in 1:n.w ) {
- dp.total [[v]]=sum (as.numeric (dp [[v]]$depth) , na.rm=T)
+for(v in 1:n.w) {
+ dp.total[[v]]=sum(as.numeric(dp[[v]]$depth), na.rm=T)
+ print(paste("Total depth for sample", v, ":", dp.total[[v]])) # Debugging output
 }
-dp.mean=mean (dp.total)
-
+dp.mean=mean(unlist(dp.total), na.rm=T) # Ensure 'dp.total' is a numeric vector
+print(paste("Mean depth:", dp.mean)) # Debugging output
 
 dp.s=NULL; p.s=NULL; p.s.0 =NULL; nd=NULL;
 
